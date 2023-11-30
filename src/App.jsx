@@ -101,9 +101,9 @@ function App() {
             </div>
         </section>
         <div className="faculty-cards">
-          <Card name="I.C. Nobranes" faculty="Psycho">
+          <Card name="I.C. Nobranes" faculty="Psych Ward">
             <p>
-              "Blake is a leftist professor of Computer Science at the
+              "Blake sees lines of code of Computer Science at the
               University of Illinois."
             </p>
             <p>
@@ -113,7 +113,7 @@ function App() {
 
           <Card name="Maria Manymiles" faculty="Sex Therapy">
             <p>
-              "Maria is a Marxist professor of Computer Science at the
+              "Maria "Professor FeelGood" works long and hard hours at the
               University of Illinois."
             </p>
             <p>
@@ -122,10 +122,10 @@ function App() {
           </Card>
           <Card name="Dwight Hocum" faculty="BS Comp">
             <p>
-              "Dwight the non-right is a goofy SJP 'warrior' who likes pop and chips."
+              "Dwight understand Latin who likes pop and chips."
             </p>
             <p>
-              <a href="mailto:blake@example.com">Email Maria</a>
+              <a href="mailto:blake@example.com">Email Dwight</a>
             </p>
           </Card>
         </div>
