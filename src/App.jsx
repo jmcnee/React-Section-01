@@ -114,7 +114,7 @@ function App() {
           </Card>
           <Card name="Maria Milestone" faculty="Project Engineering">
             <p>
-              "Maria ensuring all projects are completed on time at the University of Illinois."
+              "Maria ensures all projects are completed on time at the University of Illinois."
             </p>
             <p>
               <a href="mailto:blake@example.com">Email Maria</a>
