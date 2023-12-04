@@ -34,6 +34,25 @@ function App() {
     
 }
 
+  // const [ del, setDel ] = useState();
+  // function handleDel(propFromOnDel) {// user is prompted for del option, then confirm displays
+  //   setDel(propFromOnDel)
+  //   console.log(propFromOnDel)
+  // }
+
+  /* 1- to display the del/confrimation box, we need to control 
+  whether the warning box is visible or not. this we need toregister an 'isDeleting' state that is either true or false. NOTE how we can provide the boolean in the useState() hook.
+  2- This State should be set to TRUE whenever the DEL button is clicked.
+  */  
+  const [isDeleting, setIsdeleting] = useState(false);
+      function deleteHandler() {
+        setIsdeleting(true);
+      }
+      function proceedHandler() {
+        setIsdeleting(false);
+      }
+    
+
   return (
     <div>
       <Header />
@@ -141,6 +160,24 @@ function App() {
         </div>
         <CTAButton />
       </div>
+
+      
+        <div className="del-container">
+          {isDeleting ? <div data-testid="alert" id="alert">
+              <h2>Are you sure?</h2>
+              <p>These changes can't be reverted!</p>
+              <button onClick={proceedHandler}>Proceed</button>
+            </div> : ''}
+              <div >
+              {!isDeleting ? <button className="del-btn" onClick={deleteHandler}>Delete</button>
+              : ''}
+
+                {/* <button onClick={deleteHandler}>Delete</button> */}
+              </div>
+              
+        </div> 
+        
+      
     </div>
   );
 }

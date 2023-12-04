@@ -242,3 +242,42 @@ span {
   padding: .4em 2em 4em;
   border-radius: 6px;
 }
+#alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  gap: 1.3em;
+  margin: 3rem auto;
+  padding: 1rem;
+  width: 15rem;
+  border: 2px solid #dd3562;
+  background-color: #776167;
+  color: white;
+}
+#alert button {
+  font: inherit;
+  border: none;
+  padding: 1rem 1.5rem;
+  background-color: #540218;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.del-btn {
+  display: grid;
+  place-content: center;
+  width: 10rem;
+  padding: 1em 4em;
+  height: auto;
+  border-radius: 6px;
+  background-color: rgb(103, 22, 22);
+  color: white;
+}
+.del-container {
+  height: 400px;
+  display: grid;
+  place-content: center;
+}
+
