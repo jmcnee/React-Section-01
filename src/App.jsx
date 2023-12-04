@@ -26,10 +26,12 @@ function App() {
 
 
   const [ selectedTopic, setSelectedTopic ] = useState();
-  function handleSelect(propFromOnSelect) {
-    // should be components, jsx, props or state via the parameter
+  function handleSelect(propFromOnSelect) {// components, jsx, props or state via the parameter
     setSelectedTopic(propFromOnSelect)
     console.log(propFromOnSelect)
+    console.log('the selected topic is:' + propFromOnSelect)
+    console.log('the value for propFromHandleSelect = ' + propFromOnSelect)
+    
 }
 
   return (
@@ -101,20 +103,18 @@ function App() {
             </div>
         </section>
         <div className="faculty-cards">
-          <Card name="I.C. Nobranes" faculty="Psych Ward">
+          <Card name="I.C. Noble" faculty="Psychology">
             <p>
-              "Blake sees lines of code of Computer Science at the
+              "I.C. is a can-do professor and self-help advocate at the
               University of Illinois."
             </p>
             <p>
               <a href="mailto:blake@example.com">Email Blake</a>
             </p>
           </Card>
-
-          <Card name="Maria Manymiles" faculty="Sex Therapy">
+          <Card name="Maria Milestone" faculty="Project Engineering">
             <p>
-              "Maria "Professor FeelGood" works long and hard hours at the
-              University of Illinois."
+              "Maria ensuring all projects are completed on time at the University of Illinois."
             </p>
             <p>
               <a href="mailto:blake@example.com">Email Maria</a>
@@ -122,7 +122,7 @@ function App() {
           </Card>
           <Card name="Dwight Hocum" faculty="BS Comp">
             <p>
-              "Dwight understand Latin who likes pop and chips."
+              "Dwight understands Latin who likes pop and chips and coding."
             </p>
             <p>
               <a href="mailto:blake@example.com">Email Dwight</a>
