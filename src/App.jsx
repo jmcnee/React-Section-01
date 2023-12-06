@@ -6,6 +6,7 @@ import { CTAButton } from "./components/CTAButton.jsx";
 import TabButton from "./components/TabButton.jsx";
 import TabButton2 from "./components/TabButton2.jsx";
 import Card from "./components/Card/Card.jsx";
+import Navbar from "./components/navbar/Navbar.jsx";
 
 
 
@@ -26,11 +27,9 @@ function App() {
 
 
   const [ selectedTopic, setSelectedTopic ] = useState();
-  function handleSelect(propFromOnSelect) {// components, jsx, props or state via the parameter
-    setSelectedTopic(propFromOnSelect)
-    console.log(propFromOnSelect)
-    console.log('the selected topic is:' + propFromOnSelect)
-    console.log('the value for propFromHandleSelect = ' + propFromOnSelect)
+  function handleSelect(selectedButton) {// components, jsx, props or state via the parameter
+    setSelectedTopic(selectedButton)
+    console.log(selectedButton)
     
 }
 
@@ -55,6 +54,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <Header />
       <main>
         {/* <h2>Core Concepts</h2> */}
@@ -67,15 +67,21 @@ function App() {
           2- we call the data from within the const 'CORE_CONCEPTS' utilizing
           the syntax for ARRAY[index location]
           3- Using a short form called the 'SPREAD OPERATOR' we populate the remaining cards with the rest of the data. We'll leave the first one as it since we'll likely want a hint later of what it's doing. :)          cool ... ! */}
+          
           <ul>
-            <CoreConcept
+            {/* now we update the old code with the map method saving lines of code
+            map method goes through the array item by item only until the end so it it changes (one item removed) the code will dynamically update.  */}
+            {CORE_CONCEPTS.map((conceptItem) => ( 
+              <CoreConcept key={conceptItem.title} {...conceptItem} /> 
+              ))}
+            {/* <CoreConcept
               image={CORE_CONCEPTS[0].image}
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
             />
             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
           </ul>
         </section>
 
@@ -90,15 +96,18 @@ function App() {
 
           <div className="dynamicContent">
               <h2>Dynamic Content</h2>
+              <h3>Using useState(), Components, Props, and Functions, passing values for content rendering and dynamic styling.</h3>
+              <p>This example also utilizes the parsing of a data.js file, which is an Array of Objects, which we call on by passing variables in props to populate the jsx/html templates.</p>
+              <br />
               <menu>
               {/* this super IMPORTANT example uses 'children'; looks more like standard HTML code; see TabButton for 'labels' usage; Also it is passing a function called 'handleSelect' to a PROPERTY named 'onSelect' 
               The anonymous function ()=> handleSelect() runs code devined above. but can now pass additional values 'Components'
               JSXElement  Property function-exe   innerhtml  */}
               
-              <TabButton2 onSelect={() => handleSelect('components')}>Components</TabButton2>
-              <TabButton2 onSelect={() => handleSelect('jsx')}>JSX</TabButton2>
-              <TabButton2 onSelect={() => handleSelect('props')}>Props</TabButton2>
-              <TabButton2 onSelect={() => handleSelect('state')}>State</TabButton2>
+              <TabButton2 isSelected={selectedTopic === 'components'} onSelect={() => handleSelect('components')}>Components</TabButton2>
+              <TabButton2 isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect('jsx')}>JSX</TabButton2>
+              <TabButton2 isSelected={selectedTopic === 'props'} onSelect={() => handleSelect('props')}>Props</TabButton2>
+              <TabButton2 isSelected={selectedTopic === 'state'} onSelect={() => handleSelect('state')}>State</TabButton2>
               
               {/* <button onClick={() =>(window.location.href = "https://modernedgestudio.net")}> My Portfolio  </button> */}
             </menu>
