@@ -7,7 +7,13 @@ import close from '../../assets/images/close.svg'
 import './navbar.css';
 //  good so far
 const Navbar = () => {
-    // const [toggleMenu, setToggleMenu] = useState(false);
+    
+    const [isNavOpen, setIsNavOpen] = useState(false);
+      // Function to toggle the state when the button is clicked
+        const toggleNav = () => {
+            console.log('the toggleNav is selected')
+            setIsNavOpen(!isNavOpen);
+        };
 
     return (
         <div className='navbar'>
@@ -32,12 +38,15 @@ const Navbar = () => {
             </div>
 
             <div className="mobile">
-                    <img className='hamburger' src={hamburger} />
+                    {/* Button that triggers the toggleNav function */}
+                    <img onClick={toggleNav} className='hamburger' src={hamburger} />
                     
             </div>
-            
-            <div className="mobile-menu-container">
-                <img className='close' src={close} />
+            {/* here we place a ternary operator to check if the state of the Nav is open or not
+            if it is open the class should be 'mobile-menu-open; if it is not open use the other class
+            this basically sets the transformX property to move it in and out of the viewport */}
+            <div className={isNavOpen ? 'mobile-menu-open': "mobile-menu-container  "}>
+                <img onClick={toggleNav} className='close' src={close} />
                 <div className="mobile-menu-links">
                     <p><a className='active' href='#home'>Home </a></p>
                     <p><a href='#Projects'>Projects </a></p>
