@@ -53,7 +53,7 @@ function App() {
     
 
   return (
-    <div>
+    <div className="wrapper">
       <Navbar />
       <Header />
       <main>
