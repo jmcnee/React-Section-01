@@ -33,34 +33,31 @@ const Navbar = () => {
 
             <div className="mobile">
                     <img className='hamburger' src={hamburger} />
-                    <img className='close' src={close} />
+                    
+            </div>
+            
+            <div className="mobile-menu-container">
+                <img className='close' src={close} />
+                <div className="mobile-menu-links">
+                    <p><a className='active' href='#home'>Home </a></p>
+                    <p><a href='#Projects'>Projects </a></p>
+                    <p><a href='#OpenAI'>Open AI </a></p> 
+                    <p><a href='Contact'>Contact </a></p>
                 </div>
-            {/* <div className='navbar-sign'>
-                <p>Sign in</p>
-                <button type='button'>Create Account</button>
-            </div> */}
+            </div>
             
             {/* <div className='navbar-menu'>
                 {toggleMenu
                     ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
                     : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />}
                 {toggleMenu && ( 
-                    <div className='navbar-menu_container scale-up-center'>
-                        <div className='navbar-menu_container-links'>
-                                <p><a href='#home'>Home </a></p>
-                                <p><a href='#wgpt3'>What is GPT3? </a></p>
-                                <p><a href='#possibility'>Open AI </a></p>    
-                                <p><a href='#features'>Case Studies </a></p>
-                                <p><a href='#blog'>Library </a></p>
-                        </div>
-                        <div className="navbar-menu_container-links-sign">
-                            <p>Sign in</p>
-                            <button type="button">Sign up</button>
-                        </div>
-                    </div>
+                    
                 )}
             </div> */}
+        
+        
         </div>
+
     );
 };
 

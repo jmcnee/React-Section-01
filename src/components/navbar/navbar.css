@@ -129,6 +129,35 @@ img {
 
 .navbar-menu_container-links-sign {
     display: none;
+
+}
+
+.mobile-menu-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: right;
+    align-items: end;
+    background-color: rgba(23, 19, 32, 0.99);
+    height: 50vh;
+    width: 300px;
+    padding: 5em 5em 8em 22em;
+    transform: translateX(400%);
+    /* transform: translateX(0); */
+    transition: 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 66;
+
+}
+.mobile-menu-links>p>a {
+    text-decoration: none;
+    color: white;
+    
+    
+
+
 }
 
 @media screen and (min-width: 800px) {
@@ -148,6 +177,10 @@ img {
         justify-content: flex-end;
         align-items: center;
         gap: .6em;
+    }
+
+    .mobile-menu-container {
+        display: none;
     }
     
 }
