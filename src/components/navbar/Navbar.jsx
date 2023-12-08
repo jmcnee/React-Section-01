@@ -14,6 +14,12 @@ const Navbar = () => {
             console.log('the toggleNav is selected')
             setIsNavOpen(!isNavOpen);
         };
+        // State to track the selected menu item
+        const [selectedItem, setSelectedItem] = useState(null);
+        // Function to handle menu item click and update the state
+            const handleMenuItemClick = (item) => {
+                setSelectedItem(item);
+            };
 
     return (
         <div className='navbar'>
@@ -23,10 +29,19 @@ const Navbar = () => {
                     
                 </div>
                 <div className='navbar-links_container'>
-                    <p><a className='active' href='#home'>Home </a></p>
+                    {/* <p><a className='active' href='#home'>Home </a></p>
                     <p><a href='#Projects'>Projects </a></p>
                     <p><a href='#OpenAI'>AI </a></p> 
-                    <p><a href='Contact'>Contact </a></p>
+                    <p><a href='#Contact'>Contact </a></p> */}
+                    {/* New menu to handle Active Class State */}
+                    <p><a className={selectedItem === 'home' ? 'active' : ''} onClick={() => handleMenuItemClick('home')}>Home</a></p>
+                    <p><a className={selectedItem === 'about' ? 'active' : ''} onClick={() => handleMenuItemClick('about')}>About</a></p>
+                    <p><a className={selectedItem === 'services' ? 'active' : ''} onClick={() => handleMenuItemClick('services')}>Services</a></p>
+        {/* Add more menu items as needed */}
+
+
+
+                    {/* End of menu for Active State */}
                 </div>
 
                 <div className='navbar-sign'>

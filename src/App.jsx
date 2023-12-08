@@ -7,6 +7,7 @@ import TabButton from "./components/TabButton.jsx";
 import TabButton2 from "./components/TabButton2.jsx";
 import Card from "./components/Card/Card.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
+import Todo from "./components/Todo/Todo.jsx";
 
 
 
@@ -51,6 +52,14 @@ function App() {
         setIsdeleting(false);
       }
     
+      const DUMMY_TODOS = [
+        'Learn React',
+        'Practice React',
+        'Get a Job and Profit!',
+        'Buy a car!',
+        'Get some independence',
+        'Find your personal happy space'
+    ];
 
   return (
     <div className="wrapper">
@@ -132,6 +141,17 @@ function App() {
           
             </div>
         </section>
+
+        {/* NEW Section for Todo List Examples */}
+            
+        <ul>
+            {DUMMY_TODOS.map( (todo) => <Todo text={todo} /> )}
+        </ul>
+
+
+
+        {/* End of Todo Section */}
+
         <div className="faculty-cards">
           <Card name="I.C. Noble" faculty="Psychology">
             <p>
