@@ -25,7 +25,7 @@ const Navbar = () => {
                 <div className='navbar-links_container'>
                     <p><a className='active' href='#home'>Home </a></p>
                     <p><a href='#Projects'>Projects </a></p>
-                    <p><a href='#OpenAI'>Open AI </a></p> 
+                    <p><a href='#OpenAI'>AI </a></p> 
                     <p><a href='Contact'>Contact </a></p>
                 </div>
 

@@ -61,6 +61,8 @@ function App() {
 
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+          <h3>Passing Data from data.js object via components using map() method</h3>
+          <p>Here we are presenting UI in cards which is created as a component using jsx. The cards are parsing the data using [destructuring]so each data element in the object is applied in jsx to an element. The map() method is used to go through each data object in the array until is reaches the end, so if the data is updated, the UI does not need to be updated.</p>
           {/* Here we are importing our data.js file
           above and using the data in it's ARRAY to populate the JSX.
           1- we call the function 'CoreConcept' for the markup
